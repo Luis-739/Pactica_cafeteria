@@ -1,169 +1,53 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de Cafetería</title>
-    <link rel="stylesheet" href="styles_practica_clase1.css">
-    <!-- Incluimos Font Awesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Practica Cafeteria</title>
 </head>
 <body>
-    <!-- Encabezado con título y resumen del carrito -->
     <header>
-        <h1>Menú de Cafetería</h1>
+        <h1>Cafeteria:</h1>
+        <h1>Menú:</h1>
         <div class="cart-summary">
-            Tu Orden (<span id="cart-item-count">0</span> ítems) - Total: $<span id="cart-total">0.00</span>
+            Carrito (<span id="cart-item-count">0</span> ítems) - Total: $<span id="cart-total">0.00</span>
         </div>
     </header>
-
-    <!-- Menú principal con categorías y productos -->
-    <main class="menu-container">
-    <!-- 
-        SECCIÓN DE CAFÉ Y ESPRESSO
-        Contiene las bebidas calientes a base de café
-    -->
-    <section class="menu-category">
-        <!-- Título de la categoría -->
-        <h2>Café y Espresso</h2>
-        
-        <!-- 
-            ITEM: ESPRESSO
-            - data-name: Identificador único para el producto
-            - data-price: Precio del producto (para el carrito)
-            - Contiene nombre, descripción, precio y botón de agregar
-        -->
-        <div class="menu-item" data-name="Espresso" data-price="40.00">
-            <h3>Espresso</h3>
-            <p>Shot de café concentrado.</p>
-            <span class="price">$40.00</span>
-            <button class="add-to-cart-btn">Agregar</button>
-        </div>
-        
-        <!-- ITEM: CAPUCHINO -->
-        <div class="menu-item" data-name="Capuchino" data-price="55.00">
-            <h3>Capuchino</h3>
-            <p>Espresso, leche vaporizada y espuma de leche.</p>
-            <span class="price">$55.00</span>
-            <button class="add-to-cart-btn">Agregar</button>
-        </div>
-        
-        <!-- ITEM: LATTE -->
-        <div class="menu-item" data-name="Latte" data-price="50.00">
-            <h3>Latte</h3>
-            <p>Espresso con gran cantidad de leche vaporizada.</p>
-            <span class="price">$50.00</span>
-            <button class="add-to-cart-btn">Agregar</button>
-        </div>
-    </section>
-
-    <!-- 
-        SECCIÓN DE BEBIDAS FRIAS
-        Contiene bebidas refrescantes con café y otras bases
-    -->
-    <section class="menu-category">
-        <h2>BEBIDAS FRIAS</h2>
-        
-        <!-- ITEM: ICED LATTE -->
-        <div class="menu-item" data-name="Iced Latte" data-price="60.00">
-            <h3>Iced Latte</h3>
-            <p>Espresso y leche fría con hielo.</p>
-            <span class="price">$60.00</span>
-            <button class="add-to-cart-btn">Agregar</button>
-        </div>
-        
-        <!-- ITEM: TÉ HELADO -->
-        <div class="menu-item" data-name="Té Helado" data-price="45.00">
-            <h3>Té Helado</h3>
-            <p>Té negro con limón y hielo.</p>
-            <span class="price">$45.00</span>
-            <button class="add-to-cart-btn">Agregar</button>
-        </div>
-        
-        <!-- ITEM: FRAPPUCCINO -->
-        <div class="menu-item" data-name="Frappuccino" data-price="75.00">
-            <h3>Frappuccino</h3>
-            <p>Bebida a base de café, hielo y crema batida.</p>
-            <span class="price">$75.00</span>
-            <button class="add-to-cart-btn">Agregar</button>
-        </div>
-    </section>
-
-    <!-- 
-        SECCIÓN DE POSTRES
-        Contiene opciones dulces para acompañar las bebidas
-    -->
-    <section class="menu-category">
-        <h2>POSTRES</h2>
-        
-        <!-- ITEM: CROISSANT -->
-        <div class="menu-item" data-name="Croissant" data-price="35.00">
-            <h3>Croissant</h3>
-            <p>Clásico croissant de mantequilla.</p>
-            <span class="price">$35.00</span>
-            <button class="add-to-cart-btn">Agregar</button>
-        </div>
-        
-        <!-- ITEM: PASTEL DE ZANAHORIA -->
-        <div class="menu-item" data-name="Pastel de Zanahoria" data-price="65.00">
-            <h3>Pastel de Zanahoria</h3>
-            <p>Esponjoso pastel con glaseado de queso crema.</p>
-            <span class="price">$65.00</span>
-            <button class="add-to-cart-btn">Agregar</button>
-        </div>
-        
-        <!-- ITEM: MUFFIN DE ARÁNDANO -->
-        <div class="menu-item" data-name="Muffin de Arándano" data-price="40.00">
-            <h3>Muffin de Arándano</h3>
-            <p>Muffin con trozos de arándano y un topping de streusel.</p>
-            <span class="price">$40.00</span>
-            <button class="add-to-cart-btn">Agregar</button>
-        </div>
-    </section>
-</main>
-
-    <!-- Carrito de compras lateral -->
-    <aside class="shopping-cart">
-        <h2>Tu Carrito</h2>
-        <ul id="cart-items-list">
-            <li>No hay productos agregados en el carrito.</li>
-        </ul>
-        <div class="cart-total">
-            <span>Total:</span>
-            <span id="cart-sidebar-total">$0.00</span>
-        </div>
-        <div class="cart-actions">
-            <button id="clear-cart-btn">Vaciar Carrito</button>
-            <button id="checkout-btn">Realizar Pedido</button>
-        </div>
-    </aside>
-
-    <!-- Modal para gestión de pedidos (oculto inicialmente) -->
-    <div id="orders-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Gestión de Pedidos</h2>
-            <div class="orders-container">
-                <div class="order-tabs">
-                    <button class="tab-button active" data-tab="pending">Por Entregar (<span id="pending-count">0</span>)</button>
-                    <button class="tab-button" data-tab="delivered">Entregados (<span id="delivered-count">0</span>)</button>
-                </div>
-                <div id="pending-orders" class="order-tab-content active">
-                    <p class="no-orders">No hay pedidos pendientes</p>
-                </div>
-                <div id="delivered-orders" class="order-tab-content">
-                    <p class="no-orders">No hay pedidos entregados</p>
-                </div>
+    <h1>Cafeteria:</h1>
+    <main class="Contenerdor 1">
+        <section class="categoria">
+            <h2>Pasteles:</h2>
+            <div>
+                <li>Chocolate</li>
+                <span class="precio">$100</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+                <li>Zanahoria</li>
+                <span class="precio">$120</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+                <li>Tres leches</li>
+                <span class="precio">$130</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
             </div>
-        </div>
-    </div>
-
-    <!-- Botón flotante para acceder a los pedidos -->
-    <button id="view-orders-btn" class="floating-btn">
-        <span class="order-badge" id="pending-badge">0</span>
-        <i class="fas fa-clipboard-list"></i>
-    </button>
-
+        </section>
+        <sectio class="Bebidas">
+            <h2>Bebidas:</h2>
+            <div>
+                <li>Cafe capuchino</li>
+                <span class="precio">$80</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+                <li>Malteada</li>
+                <span class="precio">$100</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+                <li>Esquimos</li>
+                <span class="precio">$70</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+            </div>
+        </section>
+    </main>
+    <section>
+        <button id="botonAgregarPedido" >Agregar pedidos:</button>
+        <ul id="listaOrdenes" ></ul>
+    </section>
     <script src="practica_clase1.js"></script>
 </body>
 </html>
