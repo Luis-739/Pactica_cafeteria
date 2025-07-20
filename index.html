@@ -6,13 +6,48 @@
     <title>Practica Cafeteria</title>
 </head>
 <body>
-    
-    <section>
+    <header>
         <h1>Cafeteria:</h1>
+        <h1>Menú:</h1>
+        <div class="cart-summary">
+            Carrito (<span id="cart-item-count">0</span> ítems) - Total: $<span id="cart-total">0.00</span>
+        </div>
+    </header>
+    <h1>Cafeteria:</h1>
+    <main class="Contenerdor 1">
+        <section class="categoria">
+            <h2>Pasteles:</h2>
+            <div>
+                <li>Chocolate</li>
+                <span class="precio">$100</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+                <li>Zanahoria</li>
+                <span class="precio">$120</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+                <li>Tres leches</li>
+                <span class="precio">$130</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+            </div>
+        </section>
+        <sectio class="Bebidas">
+            <h2>Bebidas:</h2>
+            <div>
+                <li>Cafe capuchino</li>
+                <span class="precio">$80</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+                <li>Malteada</li>
+                <span class="precio">$100</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+                <li>Esquimos</li>
+                <span class="precio">$70</span>
+                <button class="añadir_carrito">Agregar al carrito</button>
+            </div>
+        </section>
+    </main>
+    <section>
         <button id="botonAgregarPedido" >Agregar pedidos:</button>
         <ul id="listaOrdenes" ></ul>
     </section>
-
     <script src="practica_clase1.js"></script>
 </body>
 </html>

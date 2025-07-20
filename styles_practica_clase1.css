@@ -1,0 +1,502 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Encabezado */
+/* Estilos para el header fijo */
+header {
+    position: fixed; /* Hace que el header sea fijo */
+    top: 0;          /* Lo posiciona en la parte superior */
+    left: 0;         /* Alineado a la izquierda */
+    width: 100%;     /* Ocupa todo el ancho */
+    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+    /* Mantén el resto de tus estilos actuales */
+    grid-column: 1 / -1;
+    background-color: #6F4E37;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para efecto de elevación */
+}
+
+/* Añade margen al body para que el contenido no quede detrás del header */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    margin-top: 90px;
+    padding-top: 80px; /* Ajusta según la altura de tu header */
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Asegúrate que el main no quede oculto */
+.menu-container {
+    margin-top: 20px; /* Espacio adicional si es necesario */
+}
+
+.cart-summary {
+    background-color: #5a3c2c;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-right: 30px;
+}
+
+/* Contenedor del menú */
+.menu-container {
+    display: grid;
+    gap: 30px;
+}
+
+/* Categorías del menú */
+.menu-category {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Items del menú */
+.menu-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item h3 {
+    margin: 0;
+    width: 100%;
+}
+
+.menu-item p {
+    margin: 5px 0;
+    color: #666;
+    width: 100%;
+}
+
+.price {
+    font-weight: bold;
+    color: #6F4E37;
+}
+
+.add-to-cart-btn {
+    background-color: #6F4E37;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #5a3c2c;
+}
+
+/* Carrito de compras */
+.shopping-cart {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 130px;
+    margin-top: 20px;
+}
+
+#cart-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#cart-items-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-item-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.remove-item-btn:hover {
+    background-color: #ff1a1a;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.cart-actions button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#clear-cart-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+}
+
+#clear-cart-btn:hover {
+    background-color: #e2e6ea;
+}
+
+#checkout-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+#checkout-btn:hover {
+    background-color: #218838;
+}
+
+/* Estilos para el modal de pedidos */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #f8f8f8;
+    margin: 2% auto;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.order-tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 12px 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.tab-button.active {
+    border-bottom: 3px solid #6F4E37;
+    font-weight: bold;
+    color: #6F4E37;
+}
+
+.order-tab-content {
+    display: none;
+    min-height: 300px;
+}
+
+.order-tab-content.active {
+    display: block;
+}
+
+.order-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-id {
+    font-weight: bold;
+    color: #6F4E37;
+    font-size: 18px;
+}
+
+.order-date {
+    color: #666;
+    font-size: 14px;
+}
+
+.order-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.status-delivered {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.order-items {
+    margin: 15px 0;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+}
+
+.order-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.deliver-btn {
+    background-color: #6F4E37;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.deliver-btn:hover {
+    background-color: #5a3c2c;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #6F4E37;
+    color: white;
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 999;
+}
+
+.floating-btn:hover {
+    background-color: #5a3c2c;
+    transform: scale(1.1);
+}
+
+.order-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.no-orders {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 50px 0;
+    font-size: 18px;
+}
+
+/* Notificaciones */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+/* Estilos para el modal de pedidos */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow: auto; /* Permite scroll en el modal si es necesario */
+}
+
+.modal-content {
+    background-color: #f8f8f8;
+    margin: 2% auto;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    max-height: 90vh; /* Altura máxima del modal */
+    display: flex;
+    flex-direction: column;
+}
+
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden; /* Contiene el scroll interno */
+}
+
+.order-tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+/* Contenedores de pedidos con scroll */
+.order-tab-content {
+    display: none;
+    flex-grow: 1;
+    overflow-y: auto; /* Scroll vertical */
+    padding-right: 10px; /* Espacio para el scroll */
+    max-height: calc(90vh - 180px); /* Ajusta según tus necesidades */
+}
+
+.order-tab-content.active {
+    display: block;
+}
+
+/* Estilos para la barra de scroll */
+.order-tab-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.order-tab-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.order-tab-content::-webkit-scrollbar-thumb {
+    background: #6F4E37;
+    border-radius: 4px;
+}
+
+.order-tab-content::-webkit-scrollbar-thumb:hover {
+    background: #5a3c2c;
+}
+
+
+.order-group {
+    margin-bottom: 30px;
+}
+
+.order-date-header {
+    color: #6F4E37;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    position: sticky;
+    top: 0;
+    background-color: #f8f8f8;
+    z-index: 1;
+}
